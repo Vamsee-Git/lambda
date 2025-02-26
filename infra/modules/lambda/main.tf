@@ -21,15 +21,3 @@ resource "aws_cloudwatch_log_group" "lambda_logs" {
     Environment = "dev"
   }
 }
-
-output "lambda_invoke_arn" {
-  value = aws_lambda_function.this.invoke_arn
-}
-
-output "lambda_function_name" {
-  value = aws_lambda_function.this.function_name
-}
-
-output "lambda_function_arn" {
-  value = aws_lambda_function.this.arn
-}
