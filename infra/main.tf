@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     bucket         = "my-terraform-state-bucket-two-tier-vamsee"
     key            = "terraform/lambda_statefile"
-    region         = "us-east-1"
+    region         = "ap-south-1"
     encrypt        = true
   }
 }
