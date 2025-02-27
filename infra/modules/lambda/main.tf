@@ -5,7 +5,9 @@ resource "aws_lambda_function" "this" {
   image_uri     = "${var.ecr_repository_url}:latest"
   memory_size = 512
   timeout     = 30
-
+  tracing_config {
+    mode = "Active"  
+  }
  # environment {
   #  variables = {
    #   ENV = "dev"
