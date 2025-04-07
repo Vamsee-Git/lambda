@@ -40,7 +40,7 @@ jobs:
       - name: Build and push Docker image for app
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: hellolambda
+          ECR_REPOSITORY: flask-app
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./app
