@@ -24,9 +24,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
           
-      - name: Create ECR
-        run: |
-          aws ecr create-repository --repository-name hellolambda
           
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -43,5 +40,5 @@ jobs:
           ECR_REPOSITORY: flask-app
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./app
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./App
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
