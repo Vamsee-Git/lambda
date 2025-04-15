@@ -8,11 +8,6 @@ resource "aws_lambda_function" "this" {
   tracing_config {
     mode = "Active"  
   }
- # environment {
-  #  variables = {
-   #   ENV = "dev"
-    #}
-  #}
 }
 
 resource "aws_cloudwatch_log_group" "lambda_logs" {
